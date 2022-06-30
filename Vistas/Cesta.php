@@ -162,7 +162,7 @@ include '../DAO/MetodosDAO.php';
             <?php 
             if($_SESSION['acceso']==true){    
             ?>
-            location.href='Pago1.php?total=<?php echo $total; ?>&estado=pagar';
+            location.href='Pago1.php?total=<?php echo $totalaPagar; ?>&estado=pagar';
             <?php
             }
             ?>
