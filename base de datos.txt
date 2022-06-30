@@ -1,0 +1,52 @@
+USE lutylui;
+
+CREATE TABLE productos(
+codpro int primary key auto_increment,
+descripcion varchar(100) not null,
+precio numeric(8,2) not null,
+stock int not null,
+estado varchar(30) not null,
+detalle varchar(1000) not null,
+imagen varchar(50) not null);
+
+insert into productos values(null,'Adidas',800,15,'Normal','las mejores zapatillas','adidas.jpg');
+
+insert into productos values(null,'Adidas1',200,20,'Oferta','las mejores zapatillas','adidas1.jpg');
+
+insert into productos values(null,'Adidas3',800,30,'Normal','las mejores zapatillas','adidas3.jpg');
+
+insert into productos values(null,'nb',40,27,'Normal','las mejores zapatillas','nb.jpg');
+
+insert into productos values(null,'nb2',30,42,'Oferta','las mejores zapatillas','nb2.jpg');
+
+insert into productos values(null,'nb3',30,16,'Normal','las mejores zapatillas','nb3.jpg');
+
+insert into productos values(null,'nike',35,26,'Normal','las mejores zapatillas','nike.jpg');
+
+insert into productos values(null,'nike1',18,22,'Normal','las mejores zapatillas','nike1.jpg');
+
+insert into productos values(null,'nike2',70,28,'Normal','las mejores zapatillas','nike2.jpg');
+
+
+CREATE TABLE clientes(
+codCli int primary key auto_increment,
+nombre varchar(30) not null,
+correo varchar(30) not null,
+pas varchar(30) not null);
+
+
+insert into clientes values(null,'Armando Martinez','armando@gmail.com','abc123');
+
+
+CREATE TABLE pedido(
+numPedido int primary key auto_increment,
+codCli varchar(100) not null references cliente(codCli),
+fecha date not null);
+
+
+CREATE TABLE detallePedido(
+numPedido int not null,
+codpro int not null,
+can int not null,
+foreign key(numPedido) references pedido(numPedido),
+foreign key (codpro) references productos(codpro));

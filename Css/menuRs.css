@@ -1,0 +1,154 @@
+/*-----------------------------------Inicio Menu*/
+.container__header2 .logo .menuR{
+    width: 0;
+}
+
+.container__header2{
+    max-width: 100%; 
+    height: 100%;
+    margin: auto;/*Para que este centreado*/
+    margin-top: -65px;
+    padding: 30px;
+    padding-top: 90px;/*Para más espaciado*/
+    /*display: flex;Contenido del menu al lado del otro */
+    display:none ;/*Ocultar  menu */
+    justify-content: space-between;/*Contenido distribuido al lado del menu*/
+    align-items: center;
+    background-image: linear-gradient(to top, #000cb4 0%, #db12d1 100%);
+}
+
+.logo2 img{/*Tamaño del logo*/
+    width: 180px;
+}
+
+.menuR nav ul{/*Opciones del menu al lado de otra*/
+    display: flex;
+}
+
+.menuR nav ul li{ /*Opciones más distribuidas*/
+    list-style: none;
+    padding: 0px 20px;
+}
+
+.menuR nav ul li a{
+    font-size: 18px; /*Tamaño de letra*/
+    text-decoration: none;/*Quita la linea del texto*/
+    color: rgb(255, 255, 255);
+    transition: opacity 300ms;/*Al pasar el cursor en las opciones se pone opaco*/
+}
+
+.menuR nav li:hover{/*Para que al pasar el mouse se ponga opaco*/
+    transform: scale(1.1);
+    transition: all 0.3s ease 0s;
+}
+
+
+.btn__header-register,
+.btn__register-cover{/*Botón registrar*/
+    font-weight: 800;
+    color: white;
+    padding: 9px 25px; /*(9px arriba y abajo) y (25px a los lados)*/
+    background: rgb(8, 123, 255);
+    border: none;
+    border-radius: 60px;
+    font-size: 18px;
+    cursor: pointer; /*para la manito*/
+    transition: all 0.3s ease 0s;
+}
+
+
+.btn__header-register:hover,
+.btn__register-cover:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(25, 0, 255); /*para color texto*/
+    transform: scale(1.1);
+}
+
+#icon_menu2{
+    display: none; /*Para ocultar icono*/
+    /*display: block;*/ /*muestra icono menu*/
+}
+
+.menu__link{
+    font-size: 18px; /*Tamaño de letra*/
+    text-decoration: none;/*Quita la linea del texto*/
+    color: rgb(255, 255, 255);
+    transition: opacity 300ms;/*Al pasar el cursor en las opciones se pone opaco*/
+    
+}
+.menu__item {
+    list-style: none;
+
+}
+.menuR nav ul li a:hover{/*Para que al pasar el mouse se ponga opaco*/
+    color: rgb(0, 255, 242);
+}
+
+/*-----------------------------------Termina Menu*/
+
+
+
+
+
+
+
+
+
+/*Pagina responsive*/
+@media (max-width: 1024px){/*Cuando llegue a este ancho, hara lo siguiente: */
+
+    
+    
+    /*menu responsive*/
+    .container__header2{
+        display:flex;
+    }
+    
+    .logo2{
+        margin-top: 30px;
+    }
+
+    #icon_menu2{
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        color: #fff;
+        margin-top: 40px;
+    }
+
+    .header__register{ /*Quita el contenedor, para poder mostrar solo el icono*/
+        display: none;
+    }
+
+    .menuR{/*Esto lo selecciona el JS*/
+        height: 0px;/*Para que se recorte el menu al tocarlo*/
+        position: absolute;
+        right: 30px;/*Para posicionar el menu abajo del icono menu*/
+        top: 100px;/*Para bajar y subir el menu*/
+        overflow: hidden;/*Para que todo el menu se comprima dentro del icono*/
+        z-index: 10;
+        box-shadow: 0px 0px 30px -20px rgba(0,0,0,0.5);
+        transition: all 300ms;
+    }
+/**/
+    .menuR nav ul{/*hace el menu hacia abajo, para poder agregarlo en el icono menu*/
+        padding: 40px 0px;
+        flex-direction: column;
+        background-image: linear-gradient(to right, #003461 0%, #004da5 100%);
+    }
+    .menuR nav ul li a{
+        text-decoration: none;/*Quita la linea del texto*/
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .menuR nav ul li{
+        padding: 10px 40px;
+    } 
+
+    .mostrar_menu2{ /*CLASE MANIPULADA POR JS*/
+        height: 380px;
+    }
+    /*-----------Fin menu(Lo otro es en JS)*/
+
+}

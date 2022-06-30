@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,700;1,100&family=Pacifico&display=swap');
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+/* ------------------ estilos catalogo de prodiucto ---------------- */
+img{
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+.container{
+    width: 100%;
+    margin: auto;
+}
+.container--flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.column{
+    width: 100%;
+}
+
+/* ------------------ estilos principales ---------------- */
+.column__title{
+    font-size: 1.3em;
+}
+.group__title{
+    font-family: 'Lora';
+    text-align: center;
+    font-weight: 100;
+    font-size: 1.8em;
+    margin: 30px;
+    font-weight: bold;
+    color: rgb(2, 2, 63);
+}
+.catalogo .column{
+    margin-bottom: 30px;
+    text-align: center;
+}
+.catalogo__img{
+    margin: auto;
+    max-width: 350px;
+}
+
+
+
+
+
+
+
+
+
+/*------ estilos responsive ------ */
+@media screen and (min-width:100px) {
+     .container--flex{
+        justify-content: center;
+     }
+
+    .column--50{
+        width: 49%;
+    }
+    
+    .column--50-25{
+        width: 70%;
+        }
+    .column--33{
+        width: 42%;
+    }
+    .catalogo .column{
+        border: 1px transparent rgb(10, 0, 100);
+        padding: 5px;
+    }
+    .catalogo__img{
+        height: 200px;
+        width: 70%;
+        border-radius: 10px;
+        object-fit: contain;
+        box-shadow: 0 0 20px 0 blue,  0 25px 0 45px rgba(0, 110, 255, 0.5);/*sombras*/
+        
+    }
+     
+
+    .bx-show{
+        font-weight: 700;
+        width: 70%;
+        color: rgb(255, 255, 255);/*Color icono*/
+        padding: 5px 20px; /*(9px arriba y abajo) y (25px a los lados)*/
+        background: rgb(86, 11, 116);
+        border: none;
+        border-radius: 50px;
+        font-size: 16px;
+        cursor: pointer; /*para la manito*/
+        transition: all 0.3s ease 0s;
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .bx-show:hover{
+        background-color: rgb(167, 2, 158);
+        color: rgb(0, 247, 255); /*para color texto*/
+    }
+}
+
+
+
+
+
+
+
+/*------ estilos responsive ------ */
+@media screen and (min-width:542px) {
+    .container--flex{
+        justify-content: space-between;
+     }
+    .logo{
+        color: white;
+    }
+    .main-header__contactInfo{
+        text-align: right;
+    }
+    .banner{
+        margin-top: -145px;
+        z-index: -1000;
+    }
+    .main-header__contactInfo__phone{
+        background: none;
+    }
+    .main-header__contactInfo__address{
+        color: white;
+    }
+    .column--50{
+        width: 49%;
+    }
+    .main-nav{
+        background: rgba(0, 0, 0, 0.85) ;
+    }
+    .banner__content{
+        font-size: 2em;
+    }
+    .main{
+        padding-bottom: 15px;
+    }
+    .main-footer .container--flex{
+        align-items: flex-start;
+    }
+    
+    .column--50-25{
+        width: 49%;
+    }
+    .column--33{
+        width: 32%;
+    }
+    .catalogo .column{
+        border: 1px transparent rgb(10, 0, 100);
+        padding: 5px;
+    }
+    .catalogo__img{
+        height: 200px;
+        width: 70%;
+        border-radius: 10px;
+        object-fit: cover;
+        box-shadow: 0 0 20px 0 blue,  0 25px 0 45px rgba(0, 110, 255, 0.5);/*sombras*/
+       
+    }
+     
+
+    .bx-show{
+        font-weight: 700;
+        width: 70%;
+        color: rgb(255, 255, 255);/*Color icono*/
+        padding: 5px 20px; /*(9px arriba y abajo) y (25px a los lados)*/
+        background: rgb(86, 11, 116);
+        border: none;
+        border-radius: 50px;
+        font-size: 16px;
+        cursor: pointer; /*para la manito*/
+        transition: all 0.3s ease 0s;
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .bx-show:hover{
+        background-color: rgb(167, 2, 158);
+        color: rgb(0, 247, 255); /*para color texto*/
+    }
+}
+
+@media screen and (min-width:768px) {
+     .main__title{
+        font-size: 2.2em;
+    }
+    .column--50-25{
+        width: 30.5%;/*Para tamaño en columnas ordenarlas*/
+    }
+    .column__title{
+        font-size: 1em;
+    }
+    .group__title{
+        font-size: 2.2em;
+    }
+      
+}
+@media screen and (min-width:1219px){
+    .container{
+        width: 1000px;
+    }
+    .main-footer{
+       text-align: center;
+    }
+    .logo{
+        font-size: 2em;
+        padding: 0;
+    }
+    .main-header__contactInfo__phone,
+    .main-header__contactInfo__address{
+        padding-right: 0;
+        font-size: 1.15em;
+    }
+    .main-nav{
+        padding: 0;
+    }
+    .banner__content{
+        font-size: 2.5em;
+    }
+    .icon-menu{
+        display: none;
+    }
+    .menu{
+        position: static;
+        display: flex;
+        height: auto;
+        width: auto;
+    }
+    .menu__link{
+        padding: 20px;
+    }
+    .main__title{
+        font-size: 2.3em;
+    }
+    .catalogo__title{
+        font-size: 1.4em;
+    }
+    .catalogo__price{
+        font-size: 1.8em;
+    }
+    .main-footer{
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}
+@media screen and (min-width:1600px){
+    .container{
+        width: 1400px;
+    }
+    .catalogo__img{
+        height: 300px;
+    }
+}
+
+
+
+

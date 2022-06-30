@@ -1,0 +1,104 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: sans-serif;
+    background-color: rgb(255, 255, 255);
+}
+
+.form-register{
+    width: 95%;
+    max-width: 500px;
+    margin: auto;
+    background: rgb(170, 170, 170);
+    border-radius: 7px;
+}
+
+.form__titulo{
+    background: #0c3dd3;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-weight: 100;
+    font-size: 30px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom: 5px solid crimson;
+}
+
+.contenedor-inputs{
+    padding: 10px 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.contenedor-inputs input{
+    margin-bottom: 15px;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid darkgray;
+}
+.input-100{
+    width: 100%;
+}
+.btn-enviar{
+    background: crimson;
+    color: #fff;
+    margin: auto;
+    padding: 10px 40px;
+    cursor: pointer;
+    font-size: 20px;
+    display: block;
+    width: 100%;
+    font-weight: bold;
+}
+.btn-enviar:hover{
+    background: rgb(158, 0, 32);
+}
+
+.btn-enviar:active{
+    transform: scale(1.05);
+}
+.form__link{
+    width: 100%;
+    margin: 7px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.btn-ere{
+    display: block; 
+    width: 100%;
+}
+
+.btonRegress{
+    background: crimson;
+    color: #fff;
+    border-radius: 5px;
+    padding: 12px 10px;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+    border: 1px solid white ;
+    display: block;
+    text-align: center;
+}
+
+.btonRegress:hover{
+    background: rgb(158, 0, 32);
+    transform: scale(1.0);
+    transition: all 0.3s ease 0s;
+    color: white;
+    
+}
+
+.iungre{
+    text-decoration: none;
+    color: rgb(206, 7, 180);
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: underline;
+}
+

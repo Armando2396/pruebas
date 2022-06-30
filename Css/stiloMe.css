@@ -1,0 +1,159 @@
+/*-----------------------------------Inicio Menu*/
+.container__header{
+    max-width: 100%; 
+    height: 100%;
+    margin: auto;/*Para que este centreado*/
+    margin-top: -65px;
+    padding: 30px;
+    padding-top: 90px;/*Para más espaciado*/
+    display: flex;/*Contenido del menu al lado del otro */
+    justify-content: space-between;/*Contenido distribuido al lado del menu*/
+    align-items: center;
+    background-image: linear-gradient(to top, #000cb4 0%, #db12d1 100%);
+}
+
+.logo img{/*Tamaño del logo*/
+    width: 180px;
+}
+
+.menu nav ul{/*Opciones del menu al lado de otra*/
+    display: flex;
+}
+
+.menu nav ul li{ /*Opciones más distribuidas*/
+    list-style: none;
+    padding: 0px 20px;
+}
+
+.menu nav ul li a{
+    font-size: 18px; /*Tamaño de letra*/
+    text-decoration: none;/*Quita la linea del texto*/
+    color: rgb(255, 255, 255);
+    transition: opacity 300ms;/*Al pasar el cursor en las opciones se pone opaco*/
+}
+
+.menu nav li:hover{/*Para que al pasar el mouse se ponga opaco*/
+    transform: scale(1.1);
+    transition: all 0.3s ease 0s;
+}
+
+
+.btn__header-register,
+.btn__register-cover{/*Botón registrar*/
+    font-weight: 800;
+    color: white;
+    padding: 9px 25px; /*(9px arriba y abajo) y (25px a los lados)*/
+    background: rgb(8, 123, 255);
+    border: none;
+    border-radius: 60px;
+    font-size: 18px;
+    cursor: pointer; /*para la manito*/
+    transition: all 0.3s ease 0s;
+}
+
+
+.btn__header-register:hover,
+.btn__register-cover:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(25, 0, 255); /*para color texto*/
+    transform: scale(1.1);
+}
+
+#icon_menu{
+    display: none; /*Para ocultar icono*/
+    /*display: block;*/ /*muestra icono menu*/
+}
+
+.menu__link{
+    font-size: 18px; /*Tamaño de letra*/
+    text-decoration: none;/*Quita la linea del texto*/
+    color: rgb(255, 255, 255);
+    transition: opacity 300ms;/*Al pasar el cursor en las opciones se pone opaco*/
+    
+}
+.menu__item {
+    list-style: none;
+
+}
+
+/*-----------------------------------Termina Menu*/
+
+
+
+
+
+/*-----------------------------------Iconos Menu*/
+.menu nav ul li a:hover{/*Para que al pasar el mouse se ponga opaco*/
+    color: rgb(177, 0, 247);
+}
+
+.inicioIcn{
+    display: inline-block;
+    margin-left: 20px;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #fff;/*circulos de los iconos blancos*/
+    border-radius: 50%;/*iconos redondos*/
+    text-align: center;/*centrar los iconos al centro del circulo*/
+    color: rgb(25, 0, 255);/*iconos color blanco*/
+}
+
+.inicioIcn:hover{/*circulos de los iconos cambian de color al pasar el mouse*/
+    background: #fff;
+    color: #764ba2;
+}
+
+.inicioIcn i{
+    font-size: 30px;/*tamaños de los iconos*/
+    line-height: 60px;/*centrar los iconos al centro del circulo*/
+}
+
+.menu__item a:hover{
+    color: rgb(177, 0, 247);
+}
+
+
+
+/*icono perfil*/
+.actionp{
+    align-items: center;
+    }
+    
+    .actionp .profile{
+        position: relative;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        cursor: pointer;
+        margin: auto;
+    }
+    
+    .actionp .nombreA{
+        font-size: 15px;
+    }
+
+    .actionp .nombreA:hover{
+        color: rgb(0, 245, 0);
+    }
+
+
+
+
+
+
+
+
+
+/*Ocultar este menu*/
+@media (max-width: 1024px){/*Cuando llegue a este ancho, hara lo siguiente: */
+
+    /*menu responsive*/
+    .container__header{
+        display:none !important;
+    }
+    
+}
+
+
+

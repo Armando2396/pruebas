@@ -1,0 +1,354 @@
+
+
+/*Botones de Seccion*/
+
+.btn-seccion{
+    font-weight: 700;
+    color: white;
+    padding: 5px 20px; /*(9px arriba y abajo) y (25px a los lados)*/
+    background: rgb(86, 11, 116);
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer; /*para la manito*/
+    transition: all 0.3s ease 0s;
+}
+
+.btn-seccion:hover{
+    background-color: rgb(167, 2, 158);
+    color: rgb(255, 255, 255); /*para color texto*/
+}
+
+.en_registrar{
+    text-decoration: none;
+}
+
+
+
+
+/*----------boton buscar1 */
+/*
+.buscar2ss{
+    max-width: 100%;
+    height: 95px;
+    background-image: linear-gradient(to top, #ffffff 0%, #afafaf 100%);
+   }
+*/
+/*
+.buscar{
+    position: absolute;
+    max-width: 100%;
+   margin-top: 20px;
+   margin-left: 80px;hacer buscar a la derecha
+   display: block;
+}
+*/
+/*
+.buscar input{
+    width: 340px;Poner en 0 si quieres ocultarlo
+    height: 40px;
+    padding: 0 20px;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    outline: none;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    transition: opacity 300ms;Al pasar el cursor en las opciones se pone opaco 
+}
+*/
+/*
+.buttonE{
+    position: absolute;
+    right: 0;
+    width: 55px;
+    height: 55px;
+    line-height: 50px;
+    background: #06014d;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    border-radius: 30%;
+    cursor: pointer;
+    border: 1px solid #fff;circulos de los iconos blancos
+    
+}
+*/
+
+/*.buscar:hover input{/*Ocultar buscador
+    width: 240px;
+}*/
+
+/* .buscar input:focus{
+    width: 240px;
+}*/
+/*
+.buttonE{
+    display: inline-block;
+}
+
+.buttonE:hover{
+    background: rgb(33, 0, 54);
+    color: #ffffff;
+    transform: scale(1.1); 
+}*/
+
+/*----------end boton buscar1 */
+
+
+
+
+
+
+
+
+
+/*----------boton buscar2 */
+
+.buscar2ss{
+    max-width: 100%;
+    height: 95px;
+    background-image: linear-gradient(to top, #000cb4 0%, #000cb4 100%);
+   }
+
+.buscar{
+    position: absolute;
+    max-width: 100%;
+   margin-top: 20px;
+   margin-left: 80px;/*hacer buscar a la derecha*/
+   display: block;
+}
+
+.search{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: #fff;/*Cambiar a blanco*/
+    border-radius: 60px;
+    transition: 0.5s;
+    box-shadow: 0 0 0 3px #f8f8f8;/*Color y tamaño circulo*/
+    overflow: hidden;/*Oculta el texto search*/
+    transition: opacity 300ms;/*Al pasar el cursor en las opciones se pone opaco*/
+}
+
+.search.active{
+ width: 360px;
+}
+
+.search.active:hover{
+    transition: all 0.6s ease 0s;
+}
+
+.search .icon:hover{/*circulos de los iconos cambian de color al pasar el mouse*/
+    background: rgb(255, 255, 255);
+    color: #1900ff;
+    transform: scale(1.2);
+    transition: all 0.3s ease 0s;
+}
+
+.search .icon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+    
+}
+
+.search .icon::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 3px solid #287dfc;
+    border-radius: 50%;
+    transform: translate(-4px, -4px) rotate(315deg);
+}
+
+.search .icon::after{
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 12px;
+    background: #287dfc;
+    transform: translate(6px, 6px) rotate(315deg);
+}
+/*Texto input*/
+.search .input{
+    position: relative;
+    width: 210px;/*Para que no salga el texto al escribir*/
+    height: 60px;
+    left: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*Modificar texto iunput*/
+.search .input input{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 10px 0;
+}
+
+/*Icono X*/
+.clear{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);/*centrar la X*/
+    width: 15px;
+    height: 15px;
+    right: 15px;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*haciendo la X primera forma '/' */
+.clear::before{
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 15px;
+    background: #999;
+    transform: rotate(45deg);
+}
+
+/*segunda forma '\' */
+.clear::after{
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 15px;
+    background: #999;
+    transform: rotate(315deg);
+}
+/*----------End boton buscar2 */
+
+
+
+
+
+/*Iconos redes sociales*/
+.wrapper1{/*Poner los iconos al lado de otro*/
+    display: inline-flex;
+}
+
+.wrapper1 .icon{
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+
+.wrapper1 .icon span{/*hacer circulo redondo*/
+    position: relative;
+    height: 60px;
+    width: 60px;
+    display: block;
+    text-align: center;
+    background: #fff;
+    z-index: 2;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+}
+
+.wrapper1 .icon span a{/*tamaño icono y centraerlo*/
+    font-size: 30px;
+    line-height: 60px;
+    }
+
+.wrapper1 .icon-instagram{
+color: #e1306c;
+}
+
+.wrapper1 .icon-facebook{
+    color: #022f8f;
+    }
+
+
+.wrapper1 .icon:hover span a{/*Color icono al tocarlo*/
+    color: #fff;
+    }
+    
+
+/*.wrapper1 [class*="icon-"]{Color iconos 
+    color: rgb(0, 0, 0);
+}*/
+
+.wrapper1 .icon .tooltip1{
+    position: absolute;
+    top:0px;
+    background: #fff;
+    color: #fff;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    padding: 10px 18px;
+    border-radius: 25px;
+    opacity: 0;
+    pointer-events: none;/*oculto el mensaje*/
+    transition: all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+
+.wrapper1 .icon:hover .tooltip1{
+top:-70px;
+opacity: 1;
+pointer-events: auto;
+}
+
+.wrapper1 .icon .tooltip1:before{/*Parte que parezca mensaje*/
+position: absolute;
+content: "";
+height: 15px;
+width: 15px;
+bottom: -8px;
+left: 50%;
+transform: translate(-50%) rotate(45deg);
+}
+
+.wrapper1 .icon:hover span,
+.wrapper1 .icon:hover .tooltip1{
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.4);
+}
+
+.wrapper1 .facebook:hover span,
+.wrapper1 .facebook:hover .tooltip1,
+.wrapper1 .facebook:hover .tooltip1:before{
+background: #3B5999;
+}
+
+.wrapper1 .twitter:hover span,
+.wrapper1 .twitter:hover .tooltip1,
+.wrapper1 .twitter:hover .tooltip1:before{
+background: #46C1F6;
+}
+
+.wrapper1 .instagram:hover span,
+.wrapper1 .instagram:hover .tooltip1,
+.wrapper1 .instagram:hover .tooltip1:before{
+background: #e1306c;
+}
+/*End Iconos redes sociales*/
+
+
+
+

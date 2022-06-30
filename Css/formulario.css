@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap');
+
+
+
+
+
+
+
+
+
+
+.form1{
+    background: rgb(255, 255, 255);
+    margin: auto;
+    width: 90%;
+    max-width: 400px;/*Adaptable a telefono gracias a esto*/
+    padding: 2.5em 3em;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
+    text-align: center;
+}
+
+.form_title1{
+    font-size: 2rem;
+    margin-bottom: .5em;
+}
+
+.form_paragraph1{
+    font-weight: 400;
+}
+
+.formContenedor{
+    margin-top: 3em;
+    display: grid;
+    gap: 2.5em;/*Espaciado*/
+}
+
+.formlgroup{
+    position: relative;
+    --color: #5757577e;
+}
+
+.purechat-input{
+    width: 100%;
+    background: none;
+    color: #706c6c;
+    font-size: 1rem;
+    padding: .6em .3em;
+    border: none;
+    outline: none;/*quitar bordes de labels*/
+    border-bottom: 1px solid var(--color);
+    font-family: 'Roboto', sans-serif;
+}
+
+.purechat-input:focus + .form_label1,
+.purechat-input:not(:placeholder-shown) + .form__label1{
+    transform: translate(-12px) scale(.7);
+    transition: left top;
+    color: #021f79;
+}
+
+.form_label1{/*Posiciona los labels dentro de los inputs*/
+    color: var(--color);
+    cursor: pointer;
+    position: absolute;
+    top: -15px;
+    left: 5px;
+    transform: translateY(10px);
+    transition: transform .5s, color .3s;
+}
+
+
+
+.form_boton{
+    background-color: #3866f2;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    padding: .8em 0;
+    border: none;
+    border-radius: .5em;
+    cursor: pointer;
+}
+
+
+
+.purechat-input:focus ~ .form_line1,
+.purechat-input:not(:placeholder-shown) ~ .form_line1{
+ transform: scale(1);
+}
+
+.purechat-input:not(:placeholder-shown){
+    color: #4d4646;
+} 
+
+@media (max-width:425px){
+
+    .form_title1{
+        font-size: 1.8rem;
+    }
+}
