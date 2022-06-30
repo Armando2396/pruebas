@@ -9,7 +9,8 @@ class ConexionDB{
 
 public function ruta () {
 
-    return 'http://localhost/LutyLui/Vistas/Catalogo.php';
+  return 'http://localhost/LutyLui/Vistas/Catalogo.php';
+
 
   }
 }
