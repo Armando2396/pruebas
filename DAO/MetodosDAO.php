@@ -67,7 +67,7 @@ class MetodosDAO{
         $i=0;
         $cnx=new ConexionDB();
         $cn=$cnx->getConexion();
-        $res=$cn->prepare("INSERT  INTO clientes VALUES(0,'$cli->nomCli','$cli->correo','$cli->pas');");
+        $res=$cn->prepare("INSERT  INTO clientes VALUES(0,'$cli->nomCli','$cli->apeCli','$cli->correo','$cli->pas','$cli->dirCli');");
         $i=$res->execute();
         return  $i;
     }

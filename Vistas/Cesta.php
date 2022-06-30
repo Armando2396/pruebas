@@ -24,6 +24,12 @@ include '../DAO/MetodosDAO.php';
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'> <!--codigo para usar los iconos de esa Web-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
+<style>
+    .img-pro{
+        max-width: 64px;
+        max-height: 64px;
+    }
+</style>
 <body>
              <!-----------Inicia Menu-->
       <div class="container__header">	
@@ -46,72 +52,99 @@ include '../DAO/MetodosDAO.php';
         </div>Termina banner-->
 <br>
 
-
-
 <div class="tableC">
-   <div class="table-title">
-       <h3 align="center">Carrito de Compras</h3>
-    </div>   
-   <table border="1" align="center" width="400" class="table-fill">
-       <thead>
-         <tr>
-           <th class="table-left">Productos</th>
-           <th class="table-left">Precio</th>
-           <th class="table-left">Cantidad</th>
-           <th class="table-left">Total</th>
-       </tr>
-       </thead>
-       <tbody class="table-hover">
-   <?php
-   if (isset($_SESSION['cesta'])){
-       $total=0;
-       foreach($_SESSION['cesta'] as $id=>$x){
-           $objMetodos=new MetodosDAO();
-           $lista=$objMetodos->ListarProductosCod($id);
-           foreach($lista as $row){
-                $nombre=$row[1];
-                $precio=$row[2];
-           }
-           $costo=$x*$precio;
-           $total=$total+$costo;
-
-           ?>
-           <tr>
-               <td class="text-left" data-label="Nombre"><?php echo $nombre; ?></td>
-               <td class="text-left" data-label="Precio"><?php echo "B/. ".$precio; ?></td>
-                <td class="text-left" data-label="Cantidad"><?php echo $x; ?>
-                    <a href="" class="icon-mas"></a>
-                    <a href="../DAO/TiendaDAO.php?id=<?php echo $id;?>&accion=eliminar&op=2" class="icon-menos"></a>
-                </td>
-               <td class="text-left" data-label="Costo"><?php echo "B/. ".$costo; ?></td>
-           </tr>
-           <?php
-       }
-       ?>
-       <tr>
-           <td colspan="3" class="text-left">Total a pagar:</td>
-           <td class="text-left"><?php echo "B/. ".$total; ?></td>
-       </tr>
-       <?php
-   }
-   ?>
-   </tbody>
-</table>
-
-<div class="enlaB">
-<h6 align="center" >
-    <br>
-
-    <div class="botones-cat">
-    <a href="Catalogo.php" class="Text-abajo bton1">Seguir Comprando</a>
-    <a href="../DAO/TiendaDAO.php?accion=vacio&op=2" class="Text-abajo bton2">Eliminar Compras</a>
-    <a href="#" class="Text-abajo bton3" onclick="validar()" data-bs-toggle="modal" data-bs-target="#LoginModal">Realizar Pago</a>
+    <div class="TableC-Contenedor">
+        <div class="table-title">
+            <h3 align="center">Carrito de Compras</h3>
+        </div>   
+        <table border="1" align="center" width="400" class="table-fill">
+            <thead>
+                <tr>
+                    <th class="table-left">Productos</th>
+                    <th class="table-left">Cantidad</th>
+                    <th class="table-left">Precio</th>
+                    <th class="table-left">Subtotal</th>
+                </tr>
+            </thead>
+            <tbody class="table-hover">
+                <?php
+                    if (isset($_SESSION['cesta'])){
+                    $total=0;
+                    foreach($_SESSION['cesta'] as $id=>$x){
+                        $objMetodos=new MetodosDAO();
+                        $lista=$objMetodos->ListarProductosCod($id);
+                        foreach($lista as $row){
+                                $nombre=$row[1];
+                                $precio=$row[2];
+                        }
+                        $costo=$x*$precio;
+                        $total=$total+$costo;
+                        $Subtotal = number_format($total, 2);
+                        $imp=$Subtotal*0.07;
+                       
+                ?>
+                    <tr>
+                        <td class="text-left" data-label="Nombre"><img src="../Imagenes/<?php echo $row[6]; ?>" class="img-pro"><?php echo $nombre; ?></td>
+                        <td class="text-left" data-label="Cantidad"><?php echo $x; ?>
+                            <a href="" class="icon-mas"></a>
+                            <a href="../DAO/TiendaDAO.php?id=<?php echo $id;?>&accion=eliminar&op=2" class="icon-menos"></a>
+                        </td>
+                        <td class="text-left" data-label="Precio"><?php echo "B/. ".$precio; ?></td>
+                        <td class="text-left" data-label="Costo"><?php echo "B/. ".$costo; ?></td>
+                    </tr>
+                <?php
+                }
+                ?>
+                <?php
+                }
+                ?>
+            </tbody>
+        </table>
     </div>
-</h6>
-</div>
+    <div class="tableD">
+        <div class="table-title">
+            <h3>Total de Pedido</h3>
+        </div>
+        <table>
+            <thead>
+
+            </thead>
+            <tbody class="table-hover">
+                <tr>
+                    <td>SubTotal:</td>
+                    <td>B/. </td>
+                    <td><?php echo $Subtotal; ?></td>
+                </tr>
+                <tr>
+                    <td>Impuesto:</td>
+                    <td>B/.</td>
+                    <td><?php echo $imp; ?></td>
+                </tr>
+                <tr>
+                    <td>Total:</td>
+                    <td>
+                        <?php
+                        $totalaPagar=$Subtotal+$imp;
+                        echo 'B/. ';
+                        ?>
+                    </td>
+                    <td><?php echo $totalaPagar; ?></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </div>
-
+    <div class="enlaB">
+        <h6 align="center" >
+            <br>
+            <div class="botones-cat">
+                <a href="Catalogo.php" class="Text-abajo bton1">Seguir Comprando</a>
+                <a href="../DAO/TiendaDAO.php?accion=vacio&op=2" class="Text-abajo bton2">Eliminar Compras</a>
+                <a href="#" class="Text-abajo bton3" onclick="validar()" data-bs-toggle="modal" data-bs-target="#LoginModal">Realizar Pago</a>
+            </div>
+        </h6>
+    </div>
 <br>
 
 
